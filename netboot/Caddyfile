@@ -1,0 +1,16 @@
+# SPDX-FileCopyrightText: 2025 Linus Heckemann <git@sphalerite.org>
+#
+# SPDX-License-Identifier: MIT
+
+:8000
+root * .
+encode
+log
+file_server
+reverse_proxy /nix-cache-info :5000
+reverse_proxy /*.narinfo :5000
+reverse_proxy /nar/* :5000
+handle_path /pixiecore/v1/boot/* {
+	file_server
+	rewrite * ./boot-response.json
+}

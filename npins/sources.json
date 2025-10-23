@@ -1,0 +1,89 @@
+{
+  "pins": {
+    "disko": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "raitobezarius",
+        "repo": "disko"
+      },
+      "branch": "fido2-disko",
+      "submodules": false,
+      "revision": "d63769e7b9b88e4e53d04f663b3348b73eb1c4f7",
+      "url": "https://github.com/raitobezarius/disko/archive/d63769e7b9b88e4e53d04f663b3348b73eb1c4f7.tar.gz",
+      "hash": "0wkfyqv47z3dn2s6qnad8miybn6r3pn2dv30dcq2hk6x00484j27"
+    },
+    "git-hooks": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "cachix",
+        "repo": "git-hooks.nix"
+      },
+      "branch": "master",
+      "submodules": false,
+      "revision": "ca5b894d3e3e151ffc1db040b6ce4dcc75d31c37",
+      "url": "https://github.com/cachix/git-hooks.nix/archive/ca5b894d3e3e151ffc1db040b6ce4dcc75d31c37.tar.gz",
+      "hash": "11r45r45qcfv77rx024mqpra2yixnc5g248kp7rmccq09vll1y85"
+    },
+    "nix-actions": {
+      "type": "GitRelease",
+      "repository": {
+        "type": "Git",
+        "url": "https://git.dgnum.eu/DGNum/nix-actions"
+      },
+      "pre_releases": false,
+      "version_upper_bound": null,
+      "release_prefix": null,
+      "submodules": false,
+      "version": "v0.5.1",
+      "revision": "06847b3256df402da0475dccb290832ec92a9f8c",
+      "url": null,
+      "hash": "03s87spp56n1xpd14xp7j84619zpv2xxz1jj83iclzclm1s9j4yv"
+    },
+    "nix-reuse": {
+      "type": "Git",
+      "repository": {
+        "type": "Git",
+        "url": "https://git.dgnum.eu/DGNum/nix-reuse"
+      },
+      "branch": "main",
+      "submodules": false,
+      "revision": "3cd77b6fd38b767452c6493c8f41187ffc302e39",
+      "url": null,
+      "hash": "1g6nm82ja9h9hvb87a9ajad10vxqzm2gx8gqsn0pv5q3j47fq553"
+    },
+    "nixpkgs": {
+      "type": "Channel",
+      "name": "nixpkgs-unstable",
+      "url": "https://releases.nixos.org/nixpkgs/nixpkgs-25.11pre877036.c12c63cd6c5e/nixexprs.tar.xz",
+      "hash": "0nwxsz085l794w864zsh7wdy2acr841qhvq4hhh22hh82dljs45y"
+    },
+    "securix": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "cloud-gouv",
+        "repo": "securix"
+      },
+      "branch": "bureautix",
+      "submodules": false,
+      "revision": "f84ea75912b46f46414913da60fa16bb86fca69d",
+      "url": "https://github.com/cloud-gouv/securix/archive/f84ea75912b46f46414913da60fa16bb86fca69d.tar.gz",
+      "hash": "19qgmzg33cbqw1raivvgj74ddvqbk8xgsrswyq0l3fixbbzmxgfv"
+    },
+    "snowboot": {
+      "type": "Git",
+      "repository": {
+        "type": "Git",
+        "url": "https://git.mbosch.me/linus/snowboot"
+      },
+      "branch": "main",
+      "submodules": false,
+      "revision": "90ef94286b5561ea6e889d760f35ce03d4ba8711",
+      "url": null,
+      "hash": "07gavdyqrgpvmhxm2xrqzaplsl70f60xgsjvlpc5ayfs1qcn1lh3"
+    }
+  },
+  "version": 5
+}

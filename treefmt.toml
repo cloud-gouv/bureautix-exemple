@@ -1,0 +1,5 @@
+# The formatter multiplexer - https://github.com/numtide/treefmt
+
+[formatter.nix]
+command = "nixfmt"
+includes = ["*.nix"]

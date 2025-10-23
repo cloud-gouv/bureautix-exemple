@@ -1,0 +1,8 @@
+###
+# This file was automatically generated with nix-reuse.
+version = 1
+[[annotations]]
+SPDX-FileCopyrightText = "NONE"
+SPDX-License-Identifier = "CC0-1.0"
+path = ["**/.envrc", ".gitignore", "REUSE.toml", "shell.nix", "treefmt.toml", ".github/workflows/*", "**/npins/*"]
+precedence = "closest"
