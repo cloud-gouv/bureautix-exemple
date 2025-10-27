@@ -17,7 +17,7 @@
       { uses = "actions/checkout@08eba0b27e820071cde6df949e0beb9ba4906955"; }
       {
         name = "Install Lix";
-        uses = "samueldr/lix-gha-installer-action@8dc19fbd6451fa106a68ecb2dafeeeb90dff3a29";
+        uses = "samueldr/lix-gha-installer-action@8c7f8a4b0f594ab8a6dc3bf71c217587bbc756b5";
       }
     ]
     # Inspired by DGNum's way of checking for pre-commit hooks.
