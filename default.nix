@@ -4,7 +4,7 @@
 
 {
   sources ? import ./npins,
-  pkgs ? import sources.nixpkgs { },
+  pkgs ? import sources.nixpkgs { config.allowUnfree = true; },
   lib ? pkgs.lib,
   # Use this input to co-develop Securix.
   securixSrc ? sources.securix,
