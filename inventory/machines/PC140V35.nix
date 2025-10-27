@@ -7,5 +7,9 @@
   securix.self.machine = {
     hardwareSKU = "x280";
     serialNumber = "PC140V35";
+
+    users = [
+      "heloise"
+    ];
   };
 }
