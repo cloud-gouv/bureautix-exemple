@@ -20,6 +20,7 @@ let
     isFunction
     nameValuePair
     removeSuffix
+    mapAttrs
     ;
 
   defaultEdition = "acmecorp-bureautix";
@@ -210,78 +211,32 @@ rec {
     '';
   };
 
-  machines = {
-    unassigned = ./inventory/machines/unassigned.nix;
-    PC140V35 = ./inventory/machines/PC140V35.nix;
-  };
-
-  terminals = {
-    alice = securix.lib.mkTerminal {
-      name = "alice";
-      edition = defaultEdition;
-      userSpecificModule = ./inventory/users/alice.nix;
+  # { <serial number1>, <serial number2>, ... }
+  terminals = mapAttrs (
+    serial:
+    { machineModule, userModules }:
+    securix.lib.mkTerminal {
+      name = serial;
+      userSpecificModule = { };
       vpnProfiles = { };
       modules = [
+        machineModule
         ./common
-        machines.PC140V35
-      ];
-    };
-
-    bob = securix.lib.mkTerminal {
-      name = "bob";
-      edition = defaultEdition;
-      userSpecificModule = ./inventory/users/bob.nix;
-      vpnProfiles = { };
-      modules = [
-        ./common
-        machines.unassigned
-      ];
-    };
-
-    heloise = securix.lib.mkTerminal {
-      name = "bob";
-      edition = defaultEdition;
-      userSpecificModule = ./inventory/users/heloise.nix;
-      vpnProfiles = { };
-      modules = [
-        ./common
-        ./developer
-        machines.unassigned
-      ];
-    };
-
-    abelard = securix.lib.mkTerminal {
-      name = "abelard";
-      edition = defaultEdition;
-      userSpecificModule = ./inventory/users/abelard.nix;
-      vpnProfiles = { };
-      modules = [
-        ./common
-        ./developer
-        machines.unassigned
-      ];
-    };
-  };
+      ]
+      ++ userModules;
+    }
+  ) (securix.lib.readInventory2 { dir = ./inventory; });
 
   # Toplevel registry:
-  # iterate over all users and perform: $serial  $toplevel generation.
+  # iterate over all terminals and perform: $serial  $toplevel generation.
   # This builds ALL system configurations.
   toplevelRegistry =
     let
-      mkToplevel =
-        user:
-        "${terminals.${user}.system.config.securix.self.machine.serialNumber} ${
-          terminals.${user}.system.config.system.build.toplevel
-        }";
-      toplevels = map mkToplevel (
-        filter (user: terminals.${user}.system.config.securix.self.machine.serialNumber != "00000000") (
-          attrNames terminals
-        )
+      toplevels = map (serial: "${serial} ${terminals.${serial}.system.config.system.build.toplevel}") (
+        attrNames terminals
       );
     in
-    pkgs.writeText "toplevels" ''
-      ${concatStringsSep "\n" toplevels}
-    '';
+    pkgs.writeText "toplevels" (concatStringsSep "\n" toplevels);
 
   shell = pkgs.mkShell {
     # Inspired by DGNum's infrastructure.

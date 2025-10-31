@@ -68,9 +68,9 @@
       },
       "branch": "bureautix",
       "submodules": false,
-      "revision": "f84ea75912b46f46414913da60fa16bb86fca69d",
-      "url": "https://github.com/cloud-gouv/securix/archive/f84ea75912b46f46414913da60fa16bb86fca69d.tar.gz",
-      "hash": "19qgmzg33cbqw1raivvgj74ddvqbk8xgsrswyq0l3fixbbzmxgfv"
+      "revision": "08e1c3bb10703f2faffdc5203a3983481395b3d0",
+      "url": "https://github.com/cloud-gouv/securix/archive/08e1c3bb10703f2faffdc5203a3983481395b3d0.tar.gz",
+      "hash": "178hld90lpabqydy9ivh0maf096d3mw00zw971c8a1y9qbckisgy"
     },
     "snowboot": {
       "type": "Git",

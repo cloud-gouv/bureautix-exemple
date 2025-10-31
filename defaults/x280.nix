@@ -6,10 +6,6 @@
   securix.self.mainDisk = "/dev/nvme0n1";
   securix.self.machine = {
     hardwareSKU = "x280";
-    serialNumber = "PC140V35";
-
-    users = [
-      "heloise"
-    ];
+    serialNumber = "00000000";
   };
 }
