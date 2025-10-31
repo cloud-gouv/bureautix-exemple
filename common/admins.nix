@@ -11,17 +11,17 @@
     accounts = {
       rlahfa-adm = {
         # Generated with pamu2cfg --appid pam://bureautix-exemple --origin pam://bureautix-exemple --n
-        tokens = [
+        u2f_keys = [
           "GwkjO84QPbW7WlJmFiizmZizbg8QZx2WRv3uZlW9zPHDFvCU9AgmDb+7wdOb1LCXjvsKl18HNkfl99v0fB3hRg==,vq7GaYWey9xNlokMpPmpVRIaOPL57L9tRBCOoifkeD5xBqvn12q5nPXr976gJZYtOnyRWjR/pazYKIXkwKFR6g==,es256,+presence"
         ];
       };
 
       heloise-adm = {
-        tokens = [ ];
+        u2f_keys = [ ];
       };
 
       abelard-adm = {
-        tokens = [ ];
+        u2f_keys = [ ];
       };
     };
   };
