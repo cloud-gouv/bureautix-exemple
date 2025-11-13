@@ -11,4 +11,6 @@
     hashedPassword = "$y$j9T$zk4xGLyshz7RzqnMX6M8O0$AybRelILMkQSWcQZV4s.ykRNi/UlgaCUaDwdee0n7N2";
     defaultLoginShell = pkgs.zsh;
   };
+
+  bureautix.developer.enable = true;
 }
